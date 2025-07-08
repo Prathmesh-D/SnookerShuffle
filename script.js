@@ -22,7 +22,7 @@ function changeValue(id, delta) {
   const input = document.getElementById(id);
   const min = parseInt(input.min);
   const max = parseInt(input.max);
-  let value = parseInt(input.value) + delta;
+  let value = parseInt(input.value) + delta; 
   if (value < min) value = min;
   if (value > max) value = max;
   input.value = value;
@@ -35,7 +35,9 @@ function startGame() {
   const totalNeeded = playerCount * ballsPerPlayer;
 
   if (totalNeeded > fullPool.length) {
-    document.getElementById('error').textContent = `Too many balls requested. Max possible is 6 total.`;
+    const errorEl = document.getElementById('error');
+    errorEl.textContent = `⚠️ Too many balls requested. Max possible is 6 total.`;
+    errorEl.style.display = 'block';
     return;
   }
 
@@ -113,4 +115,12 @@ function restartGame() {
   document.getElementById('progressFill').style.width = `0%`;
   assignments = [];
   currentPlayer = 0;
+
+  // ✅ Clear error text and yellow styling
+  const errorBox = document.getElementById('error');
+  errorBox.textContent = '';
+  errorBox.classList.remove('error-box');
+  document.getElementById('error').innerText = '';
+  document.getElementById('error').style.display = 'none';
 }
+

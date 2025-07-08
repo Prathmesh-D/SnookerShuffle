@@ -237,3 +237,14 @@ button:hover {
   font-size: 1.2rem;
   color: #166534;
 }
+
+#error {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  border: 2px solid #f1c40f;
+  background-color: #fffbea;
+  color: #8a6d00;
+  border-radius: 8px;
+  font-weight: 600;
+  display: none; /* Hidden by default, shown when needed */
+}
