@@ -1,31 +1,31 @@
-# 🌀 Snooker Shuffle
+# 🎱 Snooker Shuffle – Let the Balls Decide!
 
-A fun little fan-made tool to help players play the **Shuffle mini-game** in Snooker — where each player gets a **secret ball color** to keep the game fair and surprising!
+Welcome to **Snooker Shuffle** — a fun little tool built just for the mini-game inside Snooker where each player gets a **secret colored ball**. No one knows who has what… until the big reveal at the end! 😮
 
-## 🕹️ How It Works
+It's fair. It's fun. It's snooker with a twist.
 
-1. Select the number of players and how many balls each gets.
-2. Each player taps **"Show"** to secretly reveal their ball(s).
-3. All selections are revealed at the end — only if you want!
+---
 
-## 🎯 What’s This For?
+## 🕹️ How to Play
+1. Choose how many players (2–4)
+2. Select how many secret balls per player (1–3)
+3. Tap **Start Game** and secretly view your ball color
+4. Reveal your colors when the game is over — for proof and glory! 🎉
 
-This tool is built just for the **Shuffle** mode inside Snooker.  
-It ensures secrecy, avoids confusion, and keeps things fair by:
-- Randomly assigning colored balls 🎱
-- Secretly showing them to each player
-- Letting players prove their original pick at the end
+---
 
-## 📱 Mobile Friendly
+## 🔗 Play It Here  
+👉 [Click to open Snooker Shuffle](https://prathmesh-d.github.io/SnookerShuffle/SnookerShuffle.html)  
 
-Designed to work smoothly on phones — just share the link with your friends and start shuffling!
+---
 
-## 🛠️ Tech Used
+## 🛠️ Built With
+- HTML + CSS + JavaScript  
+- Clean UI and pastel-colored snooker balls  
+- Designed for small screens & mobile play
 
-- HTML, CSS, JavaScript
-- Fully client-side (no server, no backend)
-- Open source & lightweight
+---
 
-## ❤️ Built With Love
+## ❤️ Made For Fun By  
+Prathmesh Deshkar  
 
-Made as a personal project by **Prathmesh Deshkar**.
