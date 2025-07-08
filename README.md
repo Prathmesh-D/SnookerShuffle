@@ -1,4 +1,4 @@
-# 🌀 Secret Shuffle
+# 🌀 Snooker Shuffle
 
 A fun little fan-made tool to help players play the **Shuffle mini-game** in Snooker — where each player gets a **secret ball color** to keep the game fair and surprising!
 
