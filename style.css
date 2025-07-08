@@ -1,0 +1,239 @@
+/* ========== Layout Setup ========== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom right, #edf7ed, #e1f4f2);
+  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #166534;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ========== Header ========== */
+.header {
+  text-align: center;
+  padding: 1rem;
+  background-color: #166534;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#step-indicator {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* ========== Progress Bar ========== */
+.progress-bar {
+  height: 8px;
+  background-color: #e0e0e0;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background-color: #28b463;
+  transition: width 0.3s ease-in-out;
+}
+
+/* ========== Main Container ========== */
+.container {
+  max-width: 480px;
+  margin: auto;
+  background: #ffffffd9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+}
+
+/* ========== Stepper Controls ========== */
+label {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #14532d;
+}
+
+.stepper-group {
+  margin-bottom: 2rem;
+}
+
+.stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.stepper button {
+  width: 42px;
+  height: 42px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: #28b463;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.stepper input {
+  width: 64px;
+  height: 44px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  vertical-align: middle;
+  line-height: 44px;
+}
+
+/* ✅ Remove number arrows */
+.stepper input::-webkit-outer-spin-button,
+.stepper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.stepper input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ========== Buttons ========== */
+button {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #28b463;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:hover {
+  background-color: #1e8449;
+}
+
+/* ========== Turn Section ========== */
+.turn-header {
+  background: rgba(180, 245, 200, 0.85);
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.turn-card {
+  text-align: center;
+  background-color: rgba(180, 245, 200, 0.85);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.number-box {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  padding: 1rem;
+  background-color: rgba(212, 255, 222, 0.9);
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.number-box.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.number-box img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ========== Summary ========== */
+#summary h2 {
+  text-align: center;
+  background-color: rgba(180, 245, 200, 0.85);
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card {
+  background-color: rgba(180, 245, 200, 0.85);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  flex: 1 1 200px;
+  max-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* ========== General Sections ========== */
+.step {
+  display: none;
+}
+.step.visible {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* ========== Info Cards ========== */
+.info-box {
+  background-color: rgba(180, 245, 200, 0.85);
+  border-left: 5px solid #28b463;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.info-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+  color: #166534;
+}
