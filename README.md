@@ -15,7 +15,7 @@ It's fair. It's fun. It's snooker with a twist.
 ---
 
 ## 🔗 Play It Here  
-👉 [Click to open Snooker Shuffle](https://prathmesh-d.github.io/SnookerShuffle/SnookerShuffle.html)  
+👉 [Click to open Snooker Shuffle](https://prathmesh-d.github.io/SnookerShuffle/index.html)  
 
 ---
 
