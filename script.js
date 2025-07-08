@@ -1,3 +1,24 @@
+// 🖼️ Preload all ball images
+const preloadImages = () => {
+  const ballImageList = [
+    "red.webp",
+    "yellow.webp",
+    "green.webp",
+    "brown.webp",
+    "blue.webp",
+    "pink.webp",
+    "black.webp"
+  ];
+
+  ballImageList.forEach(name => {
+    const img = new Image();
+    img.src = `assets/${name}`; 
+  });
+};
+
+// 🚀 Call it immediately
+preloadImages();
+
 const fullPool = ['yellow', 'green', 'brown', 'blue', 'pink', 'black'];
 let playerCount = 0;
 let ballsPerPlayer = 0;
@@ -70,7 +91,7 @@ function showNumber() {
   const colors = assignments[currentPlayer];
   const box = document.getElementById('numberDisplay');
   box.innerHTML = colors.map(color =>
-    `<img src="assets/${color}.png" alt="${color} ball">`
+    `<img src="assets/${color}.webp" alt="${color} ball">`
   ).join('');
   box.classList.remove('hidden');
   setTimeout(() => box.classList.add('revealed'), 10);
@@ -101,7 +122,7 @@ function showSummary() {
       <h3>Player ${index + 1}</h3>
       <button onclick="const box = this.nextElementSibling; box.classList.toggle('hidden'); if (!box.classList.contains('hidden')) { setTimeout(() => box.classList.add('revealed'), 10); } else { box.classList.remove('revealed'); }">👁️ Show/Hide</button>
       <div class="number-box hidden">
-        ${balls.map(color => `<img src="assets/${color}.png" alt="${color} ball">`).join('')}
+        ${balls.map(color => `<img src="assets/${color}.webp" alt="${color} ball">`).join('')}
       </div>
     `;
     container.appendChild(div);
