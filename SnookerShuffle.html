@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snooker Shuffle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Wraps content to push footer to bottom -->
+  <div class="content-wrapper">
+
+    <!-- 🔝 Header -->
+    <header class="header">
+      <h1>Snooker Shuffle</h1>
+      <div id="step-indicator">Step 1: Setup</div>
+    </header>
+
+    <!-- 🔄 Progress Bar -->
+    <div class="progress-bar">
+      <div id="progressFill"></div>
+    </div>
+
+    <!-- 🧩 Main Container -->
+    <main class="container">
+
+      <!-- 🎮 Game Setup Section -->
+      <section id="setup" class="step visible">
+
+        <!-- 👥 Player Count -->
+        <div class="stepper-group">
+          <label for="playerCountInput">Number of Players (2–4):</label>
+          <div class="stepper">
+            <button onclick="changeValue('playerCountInput', -1)">−</button>
+            <input type="number" id="playerCountInput" min="2" max="4" value="2" readonly />
+            <button onclick="changeValue('playerCountInput', 1)">+</button>
+          </div>
+        </div>
+
+        <!-- 🎱 Balls Per Player -->
+        <div class="stepper-group">
+          <label for="ballsPerPlayerInput">Balls per Player (1–3):</label>
+          <div class="stepper">
+            <button onclick="changeValue('ballsPerPlayerInput', -1)">−</button>
+            <input type="number" id="ballsPerPlayerInput" min="1" max="3" value="1" readonly />
+            <button onclick="changeValue('ballsPerPlayerInput', 1)">+</button>
+          </div>
+        </div>
+
+        <!-- 🎬 Start Button -->
+        <button onclick="startGame()">🎬 Start Game</button>
+        <p id="error"></p>
+
+        <!-- 🛠️ How It Works -->
+        <div class="info-box">
+          <h3>🛠️ How it Works</h3>
+          <ul>
+            <li><strong>1. Setup:</strong> Choose players and balls per player.</li>
+            <li><strong>2. Take Turns:</strong> Each player taps "Show" to reveal their ball(s) secretly.</li>
+            <li><strong>3. Recap:</strong> Everyone’s balls are shown at the end, if you want.</li>
+          </ul>
+        </div>
+
+        <!-- 🎯 What’s This For -->
+        <div class="info-box">
+          <h3>🎯 What’s This For?</h3>
+          <p>This tool is built for a fun little mini-game inside Snooker called <strong>Shuffle</strong>! 🎱  
+          Each player gets a secret ball to keep things fair and exciting.  
+          No confusion, no cheating — just clean fun and random surprises!</p>
+        </div>
+      </section>
+
+      <!-- 👁️ Turn Reveal Section -->
+      <section id="game" class="step hidden">
+        <div class="turn-header" id="turnTitle">Player 1</div>
+        <div class="turn-card">
+          <button id="showBtn" onclick="showNumber()">👁️ Show</button>
+          <button id="nextBtn" class="hidden" onclick="nextPlayer()">➡️ Next Player</button>
+          <div id="numberDisplay" class="number-box hidden"></div>
+        </div>
+      </section>
+
+      <!-- 📋 Summary Screen -->
+      <section id="summary" class="step hidden">
+        <h2>All Players</h2>
+        <div id="allPlayers" class="grid"></div>
+        <div style="text-align:center; margin-top:1rem;">
+          <button onclick="restartGame()">🔄 Restart Game</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- 🧾 Footer -->
+  <footer class="footer">
+    Made with ❤️ by Prathmesh Deshkar
+  </footer>
+
+  <!-- 📜 Script -->
+  <script src="script.js"></script>
+</body>
+</html>
