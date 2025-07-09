@@ -1,11 +1,10 @@
 // 🖼️ Preload all ball images
 const preloadImages = () => {
   const ballImageList = [
-    "red.webp",
     "yellow.webp",
     "green.webp",
     "brown.webp",
-    "blue.webp",
+    "blue.webp", 
     "pink.webp",
     "black.webp"
   ];
