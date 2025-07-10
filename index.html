@@ -8,8 +8,10 @@
   <!-- 🔍 SEO Meta -->
   <title>Snooker Shuffle – Random Ball Assignment Tool</title>
   <meta name="title" content="Snooker Shuffle – Random Ball Assignment Tool" />
-  <meta name="description" content="Snooker Shuffle is a simple web tool to assign balls randomly to players during the Shuffle mini-game in Snooker. Designed to keep the game fair and fun!" />
-  <meta name="keywords" content="snooker shuffle, snooker tool, ball assignment, shuffle mini game, snooker randomizer" />
+  <meta name="description"
+    content="Snooker Shuffle is a simple web tool to assign balls randomly to players during the Shuffle mini-game in Snooker. Designed to keep the game fair and fun!" />
+  <meta name="keywords"
+    content="snooker shuffle, snooker tool, ball assignment, shuffle mini game, snooker randomizer" />
   <meta name="author" content="Prathmesh Deshkar" />
   <meta name="robots" content="index, follow" />
 
@@ -42,7 +44,7 @@
 
   <!-- 🖋️ Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=1.8" />
+  <link rel="stylesheet" href="style.css?v=1.9" />
 
   <!-- ✅ Google Site Verification -->
   <meta name="google-site-verification" content="DJYw4toScbzdHQGfNOOXIjWaM0P23qokjcWANVxxgx0" />
@@ -101,15 +103,18 @@
           <ul>
             <li><strong>1. Set Players:</strong> Choose how many players are joining (2–4) and how many secret balls
               each gets.</li>
-            <li><strong>2. Secret Assignment:</strong> Click "Start Game" and take turns tapping “Show” to secretly
-              reveal your assigned colour ball. Only the current player sees it!</li>
-            <li><strong>3. Play the Game:</strong> Once all players know their balls, start your snooker match. Use your
-              secret ball info as part of the Shuffle gameplay!</li>
-            <li><strong>4. Final Reveal:</strong> At the end, hit “Show/Hide” to reveal your ball(s) if
-              needed for fun or fairness.</li>
+            <li><strong>2. Secret Assignment:</strong> Click "Start Game" and each player takes turns to reveal their
+              assigned colour ball.</li>
+            <li><strong>3. Unlock First:</strong> During the final reveal stage, each player's card is initially locked.
+              To see the result, you must click the <strong>Unlock</strong> button (🔒 icon or custom lock icon) first.
+            </li>
+            <li><strong>4. One-Way Unlock:</strong> Once unlocked, the player can toggle the “Show/Hide” button to view
+              or hide their assigned colour ball. The unlock action is permanent and cannot be re-locked.</li>
+            <li><strong>5. Play the Game:</strong> Use your secret ball info as part of the Shuffle gameplay. Try not to
+              reveal your ball unless necessary!</li>
           </ul>
           <p>This tool fits naturally into your pre-game setup — use it before the break-off, and let the mystery guide
-            your shots!</p>
+            your shots while keeping sneaky reveals in check!</p>
         </div>
 
 
@@ -118,12 +123,27 @@
           <h3>🎯 What’s This For?</h3>
           <p><strong>Snooker Shuffle</strong> is a web tool built to make the Shuffle game in Snooker fair, secret, and
             fun! 🎱
-            It helps players draw their secret colour ball randomly before a game and keeps things hidden until the big
-            reveal.
+            It helps players draw their secret coloured ball randomly before a match, ensuring mystery and fairness.</p>
+
+          <p>Each player reveals their ball secretly — but now with a smart twist! 🎯 To prevent cheating or peeking, a
+            <strong>🔒 Lock-to-Unlock</strong> system has been added. Players must unlock their assignment before they
+            can view or toggle it.
           </p>
-          <p>This tool fits right into your game flow — just open it, set the number of players and balls, and let each
-            player reveal their ball one at a time. No confusion, no bias, and no cheating!</p>
+
+          <p>This prevents opponents from sneakily checking others' balls, adding trust and accountability to the game
+            setup.</p>
+
+          <p><strong>Perfect for:</strong></p>
+          <ul>
+            <li>🧑‍🤝‍🧑 Casual club games</li>
+            <li>🎉 Friendly tournaments</li>
+            <li>📱 Quick mobile use before a match</li>
+          </ul>
+
+          <p>Just open the tool, set the number of players and balls, and assign them randomly with secrecy and style!
+          </p>
         </div>
+
         <!-- 🎲 How to Play the Shuffle Game -->
         <div class="info-box">
           <h3>🎲 How to Play the Shuffle Game</h3>
@@ -176,6 +196,19 @@
 
   <!-- 📜 Script with versioning -->
   <script src="script.js?v=1.1"></script>
+
+  <!-- 🔁 Restart Confirmation Modal -->
+  <div id="restartModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>⚠️ Restart Game?</h3>
+      <p>This will reset all player assignments. Are you sure?</p>
+      <div class="modal-buttons">
+        <button id="cancelRestart" class="btn-secondary">Cancel</button>
+        <button id="confirmRestart" class="btn-primary">Yes, Restart</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

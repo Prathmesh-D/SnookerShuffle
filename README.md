@@ -1,53 +1,53 @@
-# 🎱 Snooker Shuffle – Ball Assignment Tool for Snooker Mini-Game
+# 🎱 Snooker Shuffle – Random Ball Assignment Tool
 
-**Snooker Shuffle** is a lightweight, interactive tool designed to fairly and randomly assign snooker balls to players in the popular *Shuffle* mini-game variant played during casual or practice snooker sessions.
+Snooker Shuffle is a fun, fair, and simple web tool that randomly assigns coloured balls to players during the **Shuffle mini-game** in Snooker. This helps keep gameplay unbiased, secretive, and exciting!
 
-Whether you're at a snooker club or playing at home with friends, this tool keeps the game fair, fun, and free from confusion.
-
----
-
-## 🌟 Features
-
-- 🔢 Supports **2 to 4 players**
-- 🎱 Allows **1 or 2 balls per player**
-- 🎲 Ensures **randomized, secret assignments**
-- 🧑‍🤝‍🧑 Reveals balls one player at a time
-- 📋 Optional **summary view** at the end
-- 📱 Fully **responsive** (works great on mobile)
-- 💡 Easy to use — just tap and play
+🔗 [Live Site](https://prathmesh-d.github.io/SnookerShuffle/)
 
 ---
 
-## 🧠 What is "Snooker Shuffle"?
+## 🔐 New Feature: Anti-Cheating Lock System
 
-> *"Shuffle"* is a fun mini-format played by snooker enthusiasts, where each player is secretly assigned one or more colored balls to pot. It adds mystery, fairness, and a twist to casual play.
+To prevent players from peeking at each other's assignments during the summary reveal, we’ve added a **"Lock Before Show"** mechanism.
 
-Snooker Shuffle is **not a game by itself**, but a **companion tool** to help players randomly get their assignments without bias or repeats.
+- 🧩 Each player’s result is **initially locked** and grayed out.
+- 🔓 They must **click the unlock button** to enable the **👁️ Show/Hide** toggle.
+- 🚫 Once unlocked, the card **cannot be re-locked** — promoting fairness and transparency.
 
----
-
-## 🚀 Try It Live
-
-👉 [**Launch the Tool Now**](https://prathmesh-d.github.io/SnookerShuffle/)
-
-No download. No setup. Just open and start playing.
+This helps avoid players secretly checking and hiding someone else’s ball — especially in competitive or casual group play.
 
 ---
 
-## 📸 Screenshots
+## 🧠 How It Works
 
-> _(Include screenshots of setup, reveal, and summary screens if possible)_
+1. **Set Players:** Choose how many players (2–4) and how many secret balls each gets (1–2).
+2. **Secret Assignment:** Tap "Start Game" and take turns revealing your ball(s). Only one player views their result at a time.
+3. **Play the Game:** After all players know their ball(s), begin the snooker game using the secret assignments.
+4. **Final Reveal:** At the end, each player must **unlock** their card once before using the Show/Hide toggle.  
+   Unlocking is **permanent** and ensures no tampering or sneaky reveals.
 
 ---
 
-## 🛠️ How to Use
+## 🎯 What’s This For?
 
-1. Select the number of players (2–4).
-2. Choose how many balls each player will get (1 or 2).
-3. Hit **Start Game**.
-4. Each player taps **Show** to reveal their assigned balls.
-5. Tap **Next Player** to proceed.
-6. View the **summary** if needed, or restart the round.
+The **Shuffle mini-game** is a casual snooker variant where each player is assigned a secret coloured ball to pot — adding a layer of mystery and strategy.
+
+Snooker Shuffle automates this process fairly and efficiently.  
+It prevents arguments, removes bias, and adds a fun "hidden mission" twist to your snooker sessions.
+
+🔒 The new **Lock-to-Show system** ensures players cannot secretly peek at others’ cards or re-hide their own. This preserves game integrity and trust among players.
+
+---
+
+## ⚙️ Features
+
+- ✅ Random, unbiased ball assignment  
+- 🔄 Step-by-step gameplay with progress tracking  
+- 👁️ Secret reveal system for each player  
+- 🔐 Lock-based summary to prevent cheating  
+- 🎱 Supports 2–4 players and 1–2 balls per player  
+- 🎨 Clean UI and mobile-friendly design  
+- ⚡ Fully client-side, no backend needed  
 
 ---
 
@@ -55,48 +55,46 @@ No download. No setup. Just open and start playing.
 
 ```
 SnookerShuffle/
-├── index.html       # Main HTML file
-├── style.css        # Styling and layout
-├── script.js        # All interactive logic
-├── assets/          # All images and icons
+│
+├── index.html          # Main UI
+├── script.js           # Game logic and interactivity
+├── style.css           # UI styling
+├── assets/             # Icons, ball images, favicon, preview image
+│   ├── yellow.webp
+│   ├── green.webp
+│   ├── ...
+│   └── lock.svg        # Used for the unlock button
+├── sitemap.xml         # SEO sitemap
+├── robots.txt          # SEO crawler rules
+└── README.md           # Project description
 ```
 
 ---
 
-## 📦 Hosting
+## 🌐 SEO & Social Preview
 
-This tool is hosted for free via **GitHub Pages**  
-🔗 https://prathmesh-d.github.io/SnookerShuffle/
-
----
-
-## 💡 Why Use This Tool?
-
-- Prevent arguments during play
-- Remove bias in ball assignments
-- Great for clubs, tournaments, and casual matches
-- Free, open-source, and easy to customize
+- Includes Open Graph meta tags for sharing on WhatsApp, Facebook, and Discord.  
+- Favicon and preview image optimized for web platforms.  
+- `sitemap.xml` provided for better Google indexing.  
+- Meta title and description tailored for Google Search appearance.  
 
 ---
 
-## 👨‍💻 Developer Info
+## 🧪 Tech Stack
 
-Built with ❤️ by **Prathmesh Deshkar**
-
-> I created this to make our local snooker sessions more fair and fun.  
-> Feel free to fork, star, or suggest improvements!
-
----
-
-## 🪪 License
-
-This project is open-source and MIT-licensed.  
-Use it, modify it, or share it freely.
+- HTML5, CSS3, Vanilla JavaScript  
+- SVG icons for clarity  
+- GitHub Pages for deployment  
 
 ---
 
-## 🔎 SEO Keywords
+## 📄 License
 
-```
-snooker shuffle, snooker randomizer tool, ball assignment tool for snooker, snooker mini game, snooker game assistant, snooker ball picker, fair ball generator, snooker club tool
-```
+MIT License — Free for use and modification with credit.
+
+---
+
+## ✨ Created By
+
+**Prathmesh Deshkar**  
+Made with ❤️ for snooker players everywhere.

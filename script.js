@@ -4,14 +4,15 @@ const preloadImages = () => {
     "yellow.webp",
     "green.webp",
     "brown.webp",
-    "blue.webp", 
+    "blue.webp",
     "pink.webp",
-    "black.webp"
+    "black.webp",
+    "lock.svg" // preload the lock icon too
   ];
 
   ballImageList.forEach(name => {
     const img = new Image();
-    img.src = `assets/${name}`; 
+    img.src = `assets/${name}`;
   });
 };
 
@@ -42,7 +43,7 @@ function changeValue(id, delta) {
   const input = document.getElementById(id);
   const min = parseInt(input.min);
   const max = parseInt(input.max);
-  let value = parseInt(input.value) + delta; 
+  let value = parseInt(input.value) + delta;
   if (value < min) value = min;
   if (value > max) value = max;
   input.value = value;
@@ -82,7 +83,7 @@ function updateTurn() {
   document.getElementById('showBtn').classList.remove('hidden');
   document.getElementById('nextBtn').classList.add('hidden');
 
-  const percent = ((currentPlayer) / playerCount) * 100;
+  const percent = (currentPlayer / playerCount) * 100;
   document.getElementById('progressFill').style.width = `${percent}%`;
 }
 
@@ -114,33 +115,92 @@ function showSummary() {
 
   const container = document.getElementById('allPlayers');
   container.innerHTML = '';
+
   assignments.forEach((balls, index) => {
+    const playerId = `player-${index}`;
     const div = document.createElement('div');
-    div.classList.add('summary-card');
+    div.classList.add('summary-card', 'locked');
+    div.setAttribute('id', playerId);
+
     div.innerHTML = `
       <h3>Player ${index + 1}</h3>
-      <button onclick="const box = this.nextElementSibling; box.classList.toggle('hidden'); if (!box.classList.contains('hidden')) { setTimeout(() => box.classList.add('revealed'), 10); } else { box.classList.remove('revealed'); }">👁️ Show/Hide</button>
+      <button class="unlock-btn" onclick="unlockPlayer(this)">
+        <img src="assets/lock.svg" alt="Unlock" class="icon" />
+        Unlock
+      </button>
       <div class="number-box hidden">
         ${balls.map(color => `<img src="assets/${color}.webp" alt="${color} ball">`).join('')}
       </div>
     `;
+
     container.appendChild(div);
   });
 }
 
-function restartGame() {
-  setStep('Step 1: Setup');
-  showSection('setup');
-  document.getElementById('allPlayers').innerHTML = '';
-  document.getElementById('progressFill').style.width = `0%`;
-  assignments = [];
-  currentPlayer = 0;
+function unlockPlayer(button) {
+  const card = button.closest('.summary-card');
+  const box = card.querySelector('.number-box');
 
-  // ✅ Clear error text and yellow styling
-  const errorBox = document.getElementById('error');
-  errorBox.textContent = '';
-  errorBox.classList.remove('error-box');
-  document.getElementById('error').innerText = '';
-  document.getElementById('error').style.display = 'none';
+  // Remove locked state
+  card.classList.remove('locked');
+
+  // Replace unlock button with Show/Hide
+  button.outerHTML = `
+    <button onclick="toggleReveal(this)">👁️ Show/Hide</button>
+  `;
 }
+
+function toggleReveal(button) {
+  const box = button.nextElementSibling;
+  box.classList.toggle('hidden');
+  if (!box.classList.contains('hidden')) {
+    setTimeout(() => box.classList.add('revealed'), 10);
+  } else {
+    box.classList.remove('revealed');
+  }
+}
+
+function restartGame() {
+  const modal = document.getElementById('restartModal');
+  const confirmBtn = document.getElementById('confirmRestart');
+  const cancelBtn = document.getElementById('cancelRestart');
+
+  if (!modal || !confirmBtn || !cancelBtn) {
+    console.error("Modal elements not found in DOM");
+    return;
+  }
+
+  // Show the modal
+  modal.classList.remove('hidden');
+
+  // Remove any previous listeners to prevent stacking
+  confirmBtn.replaceWith(confirmBtn.cloneNode(true));
+  cancelBtn.replaceWith(cancelBtn.cloneNode(true));
+
+  // Re-grab cloned elements
+  const newConfirm = document.getElementById('confirmRestart');
+  const newCancel = document.getElementById('cancelRestart');
+
+  newConfirm.onclick = () => {
+    modal.classList.add('hidden');
+
+    setStep('Step 1: Setup');
+    showSection('setup');
+    document.getElementById('allPlayers').innerHTML = '';
+    document.getElementById('progressFill').style.width = `0%`;
+    assignments = [];
+    currentPlayer = 0;
+
+    const errorBox = document.getElementById('error');
+    errorBox.textContent = '';
+    errorBox.classList.remove('error-box');
+    errorBox.style.display = 'none';
+  };
+
+  newCancel.onclick = () => {
+    modal.classList.add('hidden');
+  };
+}
+
+
 
